@@ -11,7 +11,7 @@ describe('exports', function(){
   })
 
   it('should expose .mime', function(){
-    assert(express.mime == require('connect').mime, 'express.mime should be connect.mime');
+    assert(express.mime == require('@sailshq/connect').mime, 'express.mime should be connect.mime');
   })
 
   it('should expose Router', function(){
