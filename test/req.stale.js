@@ -37,7 +37,9 @@ describe('req', function(){
       var app = express();
 
       app.use(function(req, res){
-        res._headers = null;
+        Object.keys(req.headers).forEach(function(header) {
+          res.removeHeader(header);
+        });
         res.send(req.stale);
       });
 
