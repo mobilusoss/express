@@ -155,7 +155,7 @@ describe('res', function(){
       var app = express();
 
       app.use(function(req, res){
-        res.set('Content-Type', 'text/plain; charset=iso-8859-1').send(new Buffer('hi'));
+        res.set('Content-Type', 'text/plain; charset=iso-8859-1').send(Buffer.from('hi'));
       });
 
       request(app)
@@ -170,7 +170,7 @@ describe('res', function(){
       var app = express();
 
       app.use(function(req, res){
-        res.send(new Buffer('hello'));
+        res.send(Buffer.from('hello'));
       });
 
       request(app)
@@ -188,7 +188,7 @@ describe('res', function(){
 
       app.use(function (req, res) {
         var str = Array(1024 * 2).join('-');
-        res.send(new Buffer(str));
+        res.send(Buffer.from(str));
       });
 
       request(app)
@@ -201,7 +201,7 @@ describe('res', function(){
       var app = express();
 
       app.use(function(req, res){
-        res.set('Content-Type', 'text/plain').send(new Buffer('hey'));
+        res.set('Content-Type', 'text/plain').send(Buffer.from('hey'));
       });
 
       request(app)

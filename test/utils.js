@@ -14,7 +14,7 @@ describe('utils.etag(body, encoding)', function(){
   })
 
   it('should support buffer', function(){
-    var buf = new Buffer('express!')
+    var buf = Buffer.from('express!')
     utils.etag(buf)
     .should.eql('"8-zZdv4imtWD49AHEviejT6A"');
   })
@@ -37,7 +37,7 @@ describe('utils.wetag(body, encoding)', function(){
   })
 
   it('should support buffer', function(){
-    var buf = new Buffer('express!')
+    var buf = Buffer.from('express!')
     utils.wetag(buf)
     .should.eql('W/"8-zZdv4imtWD49AHEviejT6A"');
   })
